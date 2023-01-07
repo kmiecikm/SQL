@@ -1,0 +1,17 @@
+1.Wyświetl wszystkie informacje o krajach, których nazwa zaczyna się od Po.
+SELECT Name FROM country WHERE NAME LIKE 'Po%';
+
+2.Wyświetl tylko skrót i nazwę kraju, które znajdują się w Europie.
+SELECT Code , Name FROM country WHERE CONTINENT= 'Europe';
+
+ 3.Wyświetl kod kraju, w którym występuje język polski ale nie jest oficjalnym językiem ( pole isOfficial).
+SELECT * FROM countrylanguage WHERE LANGUAGE= 'Polish' and IsOfficial= 'F';
+
+4.Wyświetl wszystkie informacje o miastach, które leżą w Argentynie, a ich populacja jest większa niż 19000. Wyniki posortuj malejąco względem populacji.
+SELECT * FROM city WHERE Population > 190000 AND CountryCode= 'ARG' ORDER BY Population DESC;
+
+5.Wyświetl wszystkie miasta, w których jest mniej niż 10000 mieszkańców i posortuj od najmniejszej liczby ludności.
+SELECT * FROM city WHERE Population < 10000 ORDER BY Population ASC;
+
+6.Wyświetl nazwę kraju, kontynent, władcę (pole HeadOfState) krajów, gdzie nie ma władcy lub nazwa władcy zaczyna się na K.
+SELECT Name, Continent, HeadOfState FROM country WHERE HeadOfState IS NULL OR HEADOFSTATE LIKE 'K%';
